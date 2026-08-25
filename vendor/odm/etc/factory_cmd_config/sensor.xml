@@ -1,0 +1,244 @@
+<?xml version="1.0" ?>
+<TestCases>
+  <Description>Sensor</Description>
+  <Item>
+      <Description>LsensorCal Orig</Description>
+      <Step index="1">
+          <type>exec</type>
+          <addr>test-nusensor -d 100 -s 7 33171007</addr>
+          <operation>exec</operation>
+           <value type="show">0</value>
+       </Step>
+   </Item>
+
+   <Item>
+       <Description>LsensorCal Light</Description>
+       <Step index="1">
+           <type>file</type>
+           <addr>/sys/class/leds/lcd-backlight/brightness</addr>
+           <operation>write</operation>
+           <value>0</value>
+       </Step>
+       <Step index="2">
+           <type>exec</type>
+           <addr>test-nusensor -a calibrate Lux</addr>
+           <operation>exec</operation>
+           <value type="show">0</value>
+       </Step>
+   </Item>
+
+   <Item>
+       <Description>LsensorCfg</Description>
+       <Step index="1">
+           <type>exec</type>
+           <addr>test-nusensor -a getconfig Lux</addr>
+           <operation>exec</operation>
+           <value type="show">0</value>
+       </Step>
+   </Item>
+
+   <Item>
+       <Description>Lsensor Test</Description>
+       <Step index="1">
+           <type>exec</type>
+           <addr>test-nusensor --action=measure --delay=50 --sample=7 33171007</addr>
+           <operation>exec</operation>
+           <value type="show">0</value>
+       </Step>
+   </Item>
+
+   <Item>
+       <Description>LsensorTest</Description>
+       <Step index="1">
+           <type>exec</type>
+           <addr>am start -n com.huaqin.factory/.Display.DisPlayCheck</addr>
+           <operation delay="800">exec</operation>
+           <value type="show">0</value>
+       </Step>
+       <Step index="2">
+           <type>exec</type>
+           <addr>settings put system screen_off_timeout 2147483647</addr>
+           <operation delay="100">exec</operation>
+           <value type="show">0</value>
+       </Step>
+       <Step index="3">
+           <type>exec</type>
+           <addr>echo 0 0 > /sys/class/mi_display/disp-DSI-0/disp_param</addr>
+           <operation delay="50">exec</operation>
+           <value type="show">0</value>
+       </Step>
+       <Step index="4">
+           <type>exec</type>
+           <addr>am broadcast -a gray</addr>
+           <operation delay="100">exec</operation>
+           <value type="show">0</value>
+       </Step>
+       <Step index="5">
+           <type>file</type>
+           <addr>/sys/class/leds/lcd-backlight/brightness</addr>
+           <operation delay="250">write</operation>
+           <value>100</value>
+       </Step>
+       <Step index="6">
+           <type>exec</type>
+           <addr>test-nusensor -a triggerCwbDump</addr>
+           <operation delay="100">exec</operation>
+           <value type="show">0</value>
+       </Step>
+       <Step index="7">
+           <type>exec</type>
+           <addr>test-nusensor -d 200 -s 7 33171007</addr>
+           <operation  delay="100">exec</operation>
+           <value type="show">0</value>
+       </Step>
+       <Step index="8">
+           <type>file</type>
+           <addr>/sys/class/leds/lcd-backlight/brightness</addr>
+           <operation delay="250">write</operation>
+           <value>290</value>
+       </Step>
+        <Step index="19">
+            <type>exec</type>
+            <addr>test-nusensor -a triggerCwbDump</addr>
+            <operation delay="100">exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="10">
+            <type>exec</type>
+            <addr>test-nusensor -d 200 -s 7 33171007</addr>
+            <operation  delay="100">exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="11">
+            <type>file</type>
+            <addr>/sys/class/leds/lcd-backlight/brightness</addr>
+            <operation delay="300">write</operation>
+            <value>2047</value>
+        </Step>
+        <Step index="12">
+            <type>exec</type>
+            <addr>test-nusensor -a triggerCwbDump</addr>
+            <operation delay="100">exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="13">
+            <type>exec</type>
+            <addr>test-nusensor -d 200 -s 7 33171007</addr>
+            <operation>exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="14">
+            <type>exec</type>
+            <addr>am broadcast -a close</addr>
+            <operation delay="100">exec</operation>
+            <value type="show">0</value>
+        </Step>
+    </Item>
+
+    <Item>
+        <Description>LsensorCal Dark all</Description>
+        <Step index="1">
+            <type>exec</type>
+            <addr>if [ ! -f /mnt/vendor/nvcfg/sensor/lightSensorCali.json ] || [ ! -s /mnt/vendor/nvcfg/sensor/lightSensorCali.json ]; then cp /vendor/etc/sensors/lightSensorCali.json /mnt/vendor/nvcfg/sensor/; fi</addr>
+            <operation delay="500">exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="2">
+            <type>exec</type>
+            <addr>chown system:system /mnt/vendor/nvcfg/sensor/lightSensorCali.json</addr>
+            <operation delay="500">exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="3">
+            <type>exec</type>
+            <addr>settings put system screen_off_timeout 2147483647</addr>
+            <operation delay="100">exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="4">
+            <type>exec</type>
+            <addr>echo 0 0 > /sys/class/mi_display/disp-DSI-0/disp_param</addr>
+            <operation delay="50">exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="5">
+            <type>exec</type>
+            <addr>DFtool -pqm 3</addr>
+            <operation delay="100">exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="6">
+            <type>exec</type>
+            <addr>am start -n com.huaqin.factory/.Display.DisPlayCheck</addr>
+            <operation delay="800">exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="7">
+            <type>file</type>
+            <addr>/sys/class/leds/lcd-backlight/brightness</addr>
+            <operation delay="50">write</operation>
+            <value>10</value>
+        </Step>
+        <Step index="8">
+            <type>exec</type>
+            <addr>am broadcast -a white</addr>
+            <operation delay="100">exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="9">
+            <type>exec</type>
+            <addr>test-nusensor -a calibrate -m channelcal 33171111</addr>
+            <operation>exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="10">
+            <type>file</type>
+            <addr>/sys/class/leds/lcd-backlight/brightness</addr>
+            <operation delay="50">write</operation>
+            <value>10</value>
+        </Step>
+        <Step index="11">
+            <type>exec</type>
+            <addr>am broadcast -a close</addr>
+            <operation delay="50">exec</operation>
+            <value type="show">0</value>
+        </Step>
+        <Step index="12">
+            <type>exec</type>
+            <addr>DFtool -pqm 0</addr>
+            <operation delay="50">exec</operation>
+            <value type="show">0</value>
+        </Step>
+    </Item>
+
+    <Item>
+        <Description>GoldenChannel_Front</Description>
+        <Step index="1">
+            <type>exec</type>
+            <addr>test-nusensor -a calibrate -m goldenchannel 33171111</addr>
+            <operation>exec</operation>
+            <value type="show">0</value>
+        </Step>
+    </Item>
+
+    <Item>
+        <Description>ChannelCal_Front</Description>
+        <Step index="1">
+            <type>exec</type>
+            <addr>test-nusensor -a calibrate 33171111</addr>
+            <operation>exec</operation>
+            <value type="show">0</value>
+        </Step>
+    </Item>
+
+    <Item>
+        <Description>ChannelCalCoef_Front</Description>
+        <Step index="1">
+            <type>exec</type>
+            <addr>test-nusensor -a getconfig -s 5 33171111</addr>
+            <operation>exec</operation>
+            <value type="show">0</value>
+        </Step>
+    </Item>
+
+</TestCases>
