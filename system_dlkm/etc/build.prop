@@ -1,0 +1,22 @@
+####################################
+# from generate-common-build-props
+# These properties identify this partition image.
+####################################
+ro.product.system_dlkm.brand=Redmi
+ro.product.system_dlkm.device=obsidian
+ro.product.system_dlkm.manufacturer=Xiaomi
+ro.product.system_dlkm.model=obsidian
+ro.product.system_dlkm.name=miodm_obsidian
+ro.system_dlkm.build.date=Tue Jul 21 20:40:46 CST 2026
+ro.system_dlkm.build.date.utc=1784637646
+ro.system_dlkm.build.fingerprint=Redmi/miodm_obsidian/obsidian:16/BP2A.250605.031.A3/OS3.0.302.0.WOFEUXM:user/release-keys
+ro.system_dlkm.build.id=BP2A.250605.031.A3
+ro.system_dlkm.build.tags=release-keys
+ro.system_dlkm.build.type=user
+ro.system_dlkm.build.version.incremental=OS3.0.302.0.WOFEUXM
+ro.system_dlkm.build.version.release=16
+ro.system_dlkm.build.version.release_or_codename=16
+ro.system_dlkm.build.version.sdk=36
+ro.system_dlkm.build.version.sdk_full=36.0
+# end of file
+
