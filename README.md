@@ -1,0 +1,20 @@
+## missi-user 16 BP2A.250605.031.A3 OS3.0.302.0.WOFEUXM release-keys
+- Manufacturer: xiaomi
+- Platform: mt6789
+- Codename: obsidian
+- Brand: Redmi
+- Flavor: missi-user
+- Release Version: 16
+- Kernel Version: 6.12.30
+- Id: BP2A.250605.031.A3
+- Incremental: OS3.0.302.0.WOFEUXM
+- Tags: release-keys
+- CPU Abilist: arm64-v8a,armeabi-v7a,armeabi
+- A/B Device: true
+- Treble Device: true
+- Locale: en-GB
+- Screen Density: 480
+- Fingerprint: Redmi/obsidian_eea/obsidian:16/BP2A.250605.031.A3/OS3.0.302.0.WOFEUXM:user/release-keys
+- OTA version: 
+- Branch: missi-user-16-BP2A.250605.031.A3-OS3.0.302.0.WOFEUXM-release-keys
+- Repo: redmi_obsidian_dump

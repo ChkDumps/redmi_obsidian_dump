@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cust_features>
+    <cust_feature>
+        <map name="cota_preinstall_apps_list">
+            <item name="com.orange.update">0</item>
+            <item name="com.orange.aura.oobe">0</item>
+            <item name="com.amazon.appmanager">2</item>
+            <item name="com.alibaba.aliexpresshd">2</item>
+            <item name="com.amazon.mShop.android.shopping">2</item>
+            <item name="com.ebay.carrier">2</item>
+            <item name="com.netflix.mediaclient">2</item>
+            <item name="com.zhiliaoapp.musically">2</item>
+            <item name="com.booking">2</item>
+            <item name="com.spotify.music">2</item>
+            <item name="com.einnovation.temu">2</item>
+        </map>
+        <string-array name="allow_install_third_apps">
+            <item>com.facebook.katana</item>
+            <item>com.linkedin.android</item>
+            <item>cn.wps.moffice_eng</item>
+        </string-array>
+    </cust_feature>
+</cust_features>

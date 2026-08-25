@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cust_features>
+    <cust_feature>
+        <string-array name="allow_install_third_apps">
+            <item>com.amazon.mShop.android.shopping</item>
+            <item>com.facebook.katana</item>
+            <item>com.linkedin.android</item>
+            <item>cn.wps.moffice_eng</item>
+        </string-array>
+        <map name="cota_preinstall_apps_list">
+            <item name="com.orange.update">0</item>
+            <item name="com.orange.aura.oobe">0</item>
+            <item name="com.amazon.appmanager">2</item>
+            <item name="com.alibaba.aliexpresshd">2</item>
+            <item name="com.ebay.carrier">2</item>
+            <item name="com.netflix.mediaclient">2</item>
+            <item name="com.zhiliaoapp.musically">2</item>
+            <item name="com.spotify.music">2</item>
+            <item name="com.einnovation.temu">2</item>
+        </map>
+        <string name="config_netflix_channel">9a04d930-33ce-11ea-b1a7-efe69f39d1d8</string>
+    </cust_feature>
+</cust_features>
