@@ -1,0 +1,14 @@
+service wallpapercolor /vendor/bin/wallpapercolor_bin
+    class main
+    user root
+    oneshot
+    disabled
+    seclabel u:r:wallpapercolor:s0
+
+on boot
+    chown system system /mnt/vendor/persist/Wallpaper/color.bin
+    chmod 0664 /mnt/vendor/persist/Wallpaper/color.bin
+    start wallpapercolor
+
+on property:vendor.wallpaper.color.start=true
+    start wallpapercolor

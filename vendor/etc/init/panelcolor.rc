@@ -1,0 +1,9 @@
+#N6 code for HQ-304374 panel color by dingying at 2023/07/19 start
+service panel_color /vendor/bin/panelcolor_bin
+    class main
+    user root
+    oneshot
+    disabled
+on boot
+    start panel_color
+#N6 code for HQ-304374 panel color by dingying at 2023/07/19 end

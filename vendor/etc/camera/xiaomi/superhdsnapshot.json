@@ -1,0 +1,49 @@
+{
+  "PipelineName": "SuperHdSnapshot",
+  "NodesList": {
+    "Node": [
+      {
+        "NodeName": "com.xiaomi.plugin.photosolid",
+        "NodeInstance": "PhotosolidInstance"
+      },
+      {
+        "NodeName": "com.xiaomi.plugin.memcpy",
+        "NodeInstance":"MemcpyInstance"
+      }
+    ]
+  },
+  "PortLinkages": {
+    "Link": [
+       {
+        "SrcPort": {
+          "PortId": 0,
+          "NodeInstance": "SourceBuffer"
+         },
+        "DstPort": {
+          "PortId": 0,
+          "NodeInstance": "PhotosolidInstance"
+        }
+      },
+      {
+        "SrcPort": {
+          "PortId": 0,
+          "NodeInstance": "PhotosolidInstance"
+        },
+        "DstPort": {
+          "PortId": 0,
+          "NodeInstance": "MemcpyInstance"
+         }
+       },
+       {
+        "SrcPort": {
+          "PortId": 0,
+          "NodeInstance": "MemcpyInstance"
+        },
+        "DstPort": {
+          "PortId": 0,
+          "NodeInstance": "SinkBuffer"
+        }
+      }
+    ]
+  }
+}
